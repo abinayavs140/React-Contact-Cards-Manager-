@@ -28,10 +28,10 @@ function App() {
     }
   };
 
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.company.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+const filteredContacts = contacts.filter((contact) =>
+  (contact.name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+  (contact.company || "").toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   return (
     <div className="app">
